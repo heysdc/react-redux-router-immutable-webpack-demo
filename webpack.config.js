@@ -1,8 +1,13 @@
-var webpack = require('webpack')
+// var webpack = require('webpack')
+var path = require('path')
 
 module.exports = {
   entry: './client/components/index.js',
-  output: { path: './dist/client/js/', filename: 'index.js' },
+  output: {
+    path: path.resolve(__dirname, 'dist/client'),
+    filename: 'index.js',
+    publicPath: '/js/'
+  },
   module: {
     loaders: [
       {
@@ -14,5 +19,7 @@ module.exports = {
         }
       }
     ]
+  },
+  devServer: {
   }
 }

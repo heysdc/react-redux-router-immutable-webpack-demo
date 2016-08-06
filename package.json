@@ -4,7 +4,7 @@
   "description": "learn front-end engineering",
   "main": "index.js",
   "scripts": {
-    "start": ""
+    "start": "webpack-dev-server --hot --inline --content-base dist/client/"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,10 @@
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "standard": "^7.1.2",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
     "webpack": "^1.13.1"
   }
 }
