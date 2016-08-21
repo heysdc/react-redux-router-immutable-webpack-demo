@@ -1,6 +1,8 @@
 # react-webpack-demo
 
 - 8.3更新，手动webpack打包运行es6+react
+- 8.7更新，webpack-dev-server热加载
+- 8.22更新，es7 decorator，immutable
 
 ##过程中学到的东西
 
@@ -17,7 +19,7 @@
 ###webpack配置
 1. webpack核心思想：everything is a module;load only what and when you need
 2. cli和webpack-dev-server, webpack提供两种模式，cli打包文件，一般用于生产环境，webpack-dev-server运行于本地的node服务器，便于调试
-3. webpack-dev-server的inline与hot选项,前者为修改代码修改整个页面，后者只修改改变的component
+3. webpack-dev-server的inline与hot选项,前者为修改代码修改整个页面，后者只修改改变的component。’http://localhost:8080/webpack-dev-server/‘为入口
 4. entry入口文件，可以接受三种形式及其组合：
   - string类型，一个入口文件，一个输出
   - array，多个入口文件，一个输出
