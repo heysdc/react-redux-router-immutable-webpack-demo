@@ -5,7 +5,7 @@ import { fromJS } from 'immutable'
 
 @immutableRenderDecorator
 class World extends React.Component {
-	state = {
+  state = {
     data: fromJS({
       title: 'Hello, world!'
     })
