@@ -34,6 +34,7 @@
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-immutable-render-mixin": "^0.9.7",
+    "react-redux": "^4.4.5",
     "redux": "^3.5.2",
     "standard": "^7.1.2",
     "webpack": "^1.13.1",
