@@ -1,15 +1,8 @@
 import React from 'react'
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import reducers from './reducer/rootReducer'
-import App from './App'
-
-let store = createStore(reducers)
+import AddTodo from './containers/AddTodo'
 
 const NewTodoList = () => (
-  <Provider store={store}>
-    <App />
-  </Provider>
+  <AddTodo />
 )
 
 export default NewTodoList

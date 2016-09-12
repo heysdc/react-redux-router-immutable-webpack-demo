@@ -3,6 +3,7 @@
 - 8.3更新，手动webpack打包运行es6+react
 - 8.7更新，webpack-dev-server热加载
 - 8.22更新，es7 decorator，immutable
+- 9月更新，redux，react-router
 
 ##过程中学到的东西
 
@@ -41,6 +42,9 @@ module: {
  8. 可以采用？或者query的方式传loader的控制参数，.babelrc文件可用来存query的内容，自动识别
  9. plugins通常对打包后的文件进行处理，通常在更高层面上对loader处理完之后的文件进行处理
 
+###redux
+因为比较麻烦，在[这里](https://github.com/heysdc/Articles/blob/master/posts/learnRedux.md)专门记了笔记
+
 
 ##坑们
 1. webpack-dev-server --inline --hot：Cannot find module 'webpack' 因为我的webpack-dev-server安装在全局环境，所以需要全局环境下也得有webpack，装一个ok
@@ -51,4 +55,5 @@ module: {
   - ./或者../同__process.cwd()，并不是相对路径，当然也有例外，就是require, import等，所以其它尽量用绝对路径
 3. 继续2的问题，结果还是找不到文件，果然看文档才是最靠谱的。This modified bundle is served from memory at the relative path specified in publicPath.妈的原来是publicPath
 4. 继续3，又发现一个问题，将path与publicPath均设置为同样的值，****path.resolve(__dirname, 'dist/client/js')****，html文件中引用同样的位置运行webpack-dev-server就找不到，打包可以找到。但publicPath采用'/dist/client/js'就可以，说明publicPath采用的是相对于服务器根目录的地址
-5.
+5. react-router通过link跳转，没跳转页面，只是修改url，所以如果后端没配置相关访问地址，直接输入url是找不到相关文件的
+6. react-router-redux里把combineReducers移到了router那，所以要reducer也要改改写法

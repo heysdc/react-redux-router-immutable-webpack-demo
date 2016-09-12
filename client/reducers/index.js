@@ -1,5 +1,5 @@
-import * as actions from '../action/actions'
-import { combineReducers } from 'redux'
+import * as actions from '../actions'
+// import { combineReducers } from 'redux'
 
 const todos = (state = [], action) => {
   switch (action.type) {
@@ -16,8 +16,8 @@ const todos = (state = [], action) => {
   }
 }
 
-const reducers = combineReducers({
+const reducers = {
   todos
-})
+}
 
 export default reducers

@@ -1,7 +1,7 @@
 // import React from 'react'
 import TodoLists from '../presentations/TodoLists'
 import { connect } from 'react-redux'
-import * as actions from '../action/actions'
+import * as actions from '../../../actions'
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
@@ -12,6 +12,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
+  console.log('state', state)
   return {
     todos: state.todos
   }
