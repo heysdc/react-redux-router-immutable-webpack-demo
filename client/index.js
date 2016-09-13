@@ -4,15 +4,20 @@ import NewTodoList from './components/NewTodoList'
 import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 // import Test from './components/Test'
 import reducers from './reducers'
-import { createStore, combineReducers } from 'redux'
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
+import { createStore, applyMiddleware } from 'redux'
+import { syncHistoryWithStore } from 'react-router-redux'
 import { Provider } from 'react-redux'
+import AsyncCase from './components/AsyncCase'
+import thunkMiddleware from 'redux-thunk'
+import createLogger from 'redux-logger'
 
+const loggerMiddleware = createLogger()
 const store = createStore(
-  combineReducers({
-    ...reducers,
-    routing: routerReducer
-  })
+  reducers,
+  applyMiddleware(
+    thunkMiddleware,
+    loggerMiddleware
+  )
 )
 
 const history = syncHistoryWithStore(browserHistory, store)
@@ -23,7 +28,7 @@ class World extends React.Component {
       <Router history={history}>
         <Route path='/view/'>
           <IndexRoute component={NewTodoList} />
-          <Route path='/view/test' component={NewTodoList} />
+          <Route path='/view/timeout' component={AsyncCase} />
         </Route>
       </Router>
     </Provider>

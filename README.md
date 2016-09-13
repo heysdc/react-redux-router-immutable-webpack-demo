@@ -3,7 +3,8 @@
 - 8.3更新，手动webpack打包运行es6+react
 - 8.7更新，webpack-dev-server热加载
 - 8.22更新，es7 decorator，immutable
-- 9月更新，redux，react-router
+- 9.12日更新，redux，react-router
+- 9.14更新，redux-logger方便跟踪state变化, redux-thunk处理异步
 
 ##过程中学到的东西
 
@@ -57,3 +58,9 @@ module: {
 4. 继续3，又发现一个问题，将path与publicPath均设置为同样的值，****path.resolve(__dirname, 'dist/client/js')****，html文件中引用同样的位置运行webpack-dev-server就找不到，打包可以找到。但publicPath采用'/dist/client/js'就可以，说明publicPath采用的是相对于服务器根目录的地址
 5. react-router通过link跳转，没跳转页面，只是修改url，所以如果后端没配置相关访问地址，直接输入url是找不到相关文件的
 6. react-router-redux里把combineReducers移到了router那，所以要reducer也要改改写法
+
+##可扩展点
+[引入新的库要有原则](http://amasad.me/2016/01/03/overcoming-intuition-in-programming/)
+1. redux-actions库：生成action creaters方便
+2. immutable.js用于redux
+3. normalizr库，用于将嵌套的state变得更有序可管理
