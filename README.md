@@ -57,9 +57,20 @@ module: {
 3. 继续2的问题，结果还是找不到文件，果然看文档才是最靠谱的。This modified bundle is served from memory at the relative path specified in publicPath.妈的原来是publicPath
 4. 继续3，又发现一个问题，将path与publicPath均设置为同样的值，****path.resolve(__dirname, 'dist/client/js')****，html文件中引用同样的位置运行webpack-dev-server就找不到，打包可以找到。但publicPath采用'/dist/client/js'就可以，说明publicPath采用的是相对于服务器根目录的地址
 5. react-router通过link跳转，没跳转页面，只是修改url，所以如果后端没配置相关访问地址，直接输入url是找不到相关文件的
+6. 引入initialStore的正确姿势：
+```javascript
+const store = createStore(
+  reducers,
+  initialStore,
+  applyMiddleware(...middleware)
+)
+```
 
 ##可扩展点
 [引入新的库要有原则](http://amasad.me/2016/01/03/overcoming-intuition-in-programming/)
 1. redux-actions库：生成action creaters方便
 2. immutable.js用于redux
 3. normalizr库，用于将嵌套的state变得更有序可管理
+4. redux-promise、redux-promise-middleware可以dispatch promise
+5. redux-observable可以dispatch observable
+6. redux-saga 可以建更复杂的异步行为
