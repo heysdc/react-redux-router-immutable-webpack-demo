@@ -11,9 +11,9 @@ class World extends React.Component {
   render () {
     return <Provider store={store}>
       <Router history={history}>
-        <Route path='/view/'>
+        <Route path='/'>
           <IndexRoute component={NewTodoList} />
-          <Route path='/view/timeout' component={AsyncCase} />
+          <Route path='timeout' component={AsyncCase} />
         </Route>
       </Router>
     </Provider>

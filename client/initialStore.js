@@ -4,7 +4,7 @@ import thunkMiddleware from 'redux-thunk'
 import createLogger from 'redux-logger'
 import initialState from './initialState'
 import { syncHistoryWithStore } from 'react-router-redux'
-import { browserHistory } from 'react-router'
+import { hashHistory } from 'react-router'
 
 const loggerMiddleware = createLogger()
 
@@ -17,6 +17,6 @@ const store = createStore(
   )
 )
 
-const history = syncHistoryWithStore(browserHistory, store)
+const history = syncHistoryWithStore(hashHistory, store)
 
 export { store, history }

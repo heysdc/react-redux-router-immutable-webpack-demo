@@ -5,7 +5,7 @@ import { Link } from 'react-router'
 const NewTodoList = () => (
   <div>
     <AddTodo />
-    <Link to='/view/timeout'>Timeout</Link>
+    <Link to='/timeout'>Timeout</Link>
   </div>
 )
 
