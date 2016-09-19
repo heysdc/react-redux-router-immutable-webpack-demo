@@ -3,8 +3,9 @@
 - 8.3更新，手动webpack打包运行es6+react
 - 8.7更新，webpack-dev-server热加载
 - 8.22更新，es7 decorator，immutable
-- 9.12日更新，redux，react-router
+- 9.12更新，redux，react-router
 - 9.14更新，redux-logger方便跟踪state变化, redux-thunk处理异步
+- 9.19更新，使用immutable, redux-immutable解决深层嵌套state的处理效率问题，同时借助immutable提高了reducer的开发效率
 
 ##过程中学到的东西
 
@@ -69,7 +70,7 @@ const store = createStore(
 ##可扩展点
 [引入新的库要有原则](http://amasad.me/2016/01/03/overcoming-intuition-in-programming/)
 1. redux-actions库：生成action creaters方便
-2. immutable.js用于redux
+2. immutable.js用于redux（已引入）
 3. normalizr库，用于将嵌套的state变得更有序可管理
 4. redux-promise、redux-promise-middleware可以dispatch promise
 5. redux-observable可以dispatch observable
