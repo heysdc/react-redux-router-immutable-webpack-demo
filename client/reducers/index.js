@@ -1,66 +1,20 @@
 import * as actions from '../actions'
-import { combineReducers } from 'redux'
-import { routerReducer } from 'react-router-redux'
+import initialState from '../initialState'
+import Immutable from 'immutable'
+// import { combineReducers } from 'redux'
+// import { routerReducer } from 'react-router-redux'
 
-const todos = (state = [], action) => {
+const todos = (state = initialState.get('todos'), action) => {
+  console.log('sbs', state.toJS())
   switch (action.type) {
     case actions.ADD_TODO:
-      return [
+      return Immutable.fromJS([
         ...state,
         {
           value: action.info.value,
           id: action.info.id
         }
-      ]
-    default:
-      return state
-  }
-}
-
-const selectedSubreddit = (state = 'reactjs', action) => {
-  switch (action.type) {
-    case actions.SELECT_SUBREDDIT:
-      return action.subreddit
-    default:
-      return state
-  }
-}
-
-const posts = (state = {
-  isFetching: false,
-  didInvalidate: false,
-  items: []
-}, action) => {
-  switch (action.type) {
-    case actions.INVALIDATE_SUBREDDIT:
-      return Object.assign({}, state, {
-        didInvalidate: true
-      })
-    case actions.RECEIVE_POSTS:
-      return Object.assign({}, state, {
-        isFetching: true,
-        didInvalidate: false
-      })
-    case actions.REQUEST_POSTS:
-      return Object.assign({}, state, {
-        isFetching: false,
-        didInvalidate: false,
-        items: action.posts,
-        lastUpdated: action.receivedAt
-      })
-    default:
-      return state
-  }
-}
-
-const postsBySubreddit = (state = {}, action) => {
-  switch (action.type) {
-    case actions.INVALIDATE_SUBREDDIT:
-    case actions.RECEIVE_POSTS:
-    case actions.REQUEST_POSTS:
-      return Object.assign({}, state, {
-        [action.subreddit]: posts(state[action.subreddit], action)
-      })
+      ])
     default:
       return state
   }
@@ -75,12 +29,7 @@ const timeoutValue = (state = '', action) => {
   }
 }
 
-const reducers = combineReducers({
+export {
   todos,
-  routing: routerReducer,
-  selectedSubreddit,
-  postsBySubreddit,
   timeoutValue
-})
-
-export default reducers
+}

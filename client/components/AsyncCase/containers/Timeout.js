@@ -1,9 +1,9 @@
 import Click from '../presentations/Click'
 import { connect } from 'react-redux'
 import * as actions from '../../../actions'
-console.log('sb')
+import 'immutable'
+
 const mapDispatchToProps = (dispatch, ownProps) => {
-  console.log('dispatch', dispatch)
   return {
     onClickAdd: (inputValue) => {
       dispatch(actions.doTimeout(inputValue))
@@ -12,9 +12,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  console.log('state', state)
   return {
-    timeoutValue: state.timeoutValue
+    timeoutValue: state.get('timeoutValue')
   }
 }
 

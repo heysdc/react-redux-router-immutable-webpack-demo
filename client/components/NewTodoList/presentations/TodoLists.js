@@ -5,7 +5,6 @@ const TodoLists = ({todos, onClickAdd}) => {
     e.preventDefault()
     onClickAdd(inputNode.value)
   }
-  console.log('todos', todos, onClickAdd)
   let inputNode = null
   return <div>
     <ul>

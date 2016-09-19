@@ -5,7 +5,6 @@ const Click = ({timeoutValue, onClickAdd}) => {
     e.preventDefault()
     onClickAdd(inputNode.value)
   }
-  console.log('timeoutValue', timeoutValue, onClickAdd)
   let inputNode = null
   return <div>
     {timeoutValue}

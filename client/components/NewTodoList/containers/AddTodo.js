@@ -2,6 +2,7 @@
 import TodoLists from '../presentations/TodoLists'
 import { connect } from 'react-redux'
 import * as actions from '../../../actions'
+import 'immutable'
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
@@ -12,7 +13,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  console.log('state', state)
+  state = state.toJS()
   return {
     todos: state.todos
   }
