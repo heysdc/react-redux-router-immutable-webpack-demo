@@ -6,6 +6,7 @@
 - 9.12更新，redux，react-router
 - 9.14更新，redux-logger方便跟踪state变化, redux-thunk处理异步
 - 9.19更新，使用immutable, redux-immutable解决深层嵌套state的处理效率问题，同时借助immutable提高了reducer的开发效率
+- 9.20更新，发现如果写法稍微变化一下redux-immutable可有可无，详见[redux说明](https://github.com/heysdc/Articles/blob/master/posts/learnRedux.md)的redux-immutalbe部分，更为契合redux的思路，省去了很多兼容的部分，所以又把redux-immutable库去掉了，MDZZ
 
 ##过程中学到的东西
 
@@ -66,6 +67,7 @@ const store = createStore(
   applyMiddleware(...middleware)
 )
 ```
+7. 将immutable引入redux还是有点小坑的，主要是与各个库的兼容与写法的改变详见上面的redux部分
 
 ##可扩展点
 [引入新的库要有原则](http://amasad.me/2016/01/03/overcoming-intuition-in-programming/)

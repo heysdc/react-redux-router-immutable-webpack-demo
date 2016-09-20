@@ -1,7 +1,7 @@
 import Immutable from 'immutable'
 
-const initialState = Immutable.fromJS({
-  todos: []
-})
+const initialState = {
+  todos: Immutable.fromJS([])
+}
 
 export default initialState

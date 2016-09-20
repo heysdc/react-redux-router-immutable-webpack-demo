@@ -4,8 +4,7 @@ import Immutable from 'immutable'
 // import { combineReducers } from 'redux'
 // import { routerReducer } from 'react-router-redux'
 
-const todos = (state = initialState.get('todos'), action) => {
-  console.log('sbs', state.toJS())
+const todos = (state = initialState.todos, action) => {
   switch (action.type) {
     case actions.ADD_TODO:
       return Immutable.fromJS([

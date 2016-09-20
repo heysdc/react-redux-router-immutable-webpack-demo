@@ -13,9 +13,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  state = state.toJS()
   return {
-    todos: state.todos
+    todos: state.todos.toJS()
   }
 }
 

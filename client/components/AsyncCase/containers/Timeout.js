@@ -13,7 +13,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    timeoutValue: state.get('timeoutValue')
+    timeoutValue: state.timeoutValue
   }
 }
 
