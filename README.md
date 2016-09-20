@@ -36,17 +36,18 @@
 5. output的path与publicPath，前者为生成文件存哪，后者为资源位置，与其它插件配合使用
 6. webpack-dev-server --content-base选项，用于配置服务器载入的文件夹位置，乱七八糟的没必要都塞到服务器中，我们需要的只有html与其引用的文件,把这个改了之后改改publicPath
 7. loaders把文件转化为浏览器可接受的类型
-```javascript
-module: {
-    loaders: [{test: /\.js$/, ←Test for ".js" file, if it passes, use the loader
-    exclude: /node_modules/, ←Exclude node_modules folder
-    loader: ‘babel!jsx’ ←use babel (short for ‘babel-loader’)，
-    query: {
-      presets: ['react', 'es2015']
-    }
- }]
- ```
- 可以对同样的文件从右到左依次使用不同的类型的loader，用！分开
+
+  ```javascript
+  module: {
+      loaders: [{test: /\.js$/, ←Test for ".js" file, if it passes, use the loader
+      exclude: /node_modules/, ←Exclude node_modules folder
+      loader: ‘babel!jsx’ ←use babel (short for ‘babel-loader’)，
+      query: {
+        presets: ['react', 'es2015']
+      }
+   }]
+   ```
+   可以对同样的文件从右到左依次使用不同的类型的loader，用！分开
  8. 可以采用？或者query的方式传loader的控制参数，.babelrc文件可用来存query的内容，自动识别
  9. plugins通常对打包后的文件进行处理，通常在更高层面上对loader处理完之后的文件进行处理
 
@@ -66,14 +67,13 @@ module: {
 5. react-router通过link跳转，没跳转页面，只是修改url，所以如果后端没配置相关访问地址，直接输入url是找不到相关文件的
 6. 引入initialStore的正确姿势：
 
-```javascript
-const store = createStore(
-  reducers,
-  initialStore,
-  applyMiddleware(...middleware)
-)
-```
-
+  ```javascript
+  const store = createStore(
+    reducers,
+    initialStore,
+    applyMiddleware(...middleware)
+  )
+  ```
 7. 将immutable引入redux还是有点小坑的，主要是与各个库的兼容与写法的改变详见上面的redux部分
 
 ##可扩展点

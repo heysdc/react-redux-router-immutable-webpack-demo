@@ -36,7 +36,13 @@ const store = createStore(
   rootReducer,
   initialState,
   applyMiddleware(
-    ...middleWare
+    ...middleWare,
+    (store) => (dispatch) => (action) => {
+      console.log('before', store.getState().todos.toJS())
+      const sb = dispatch(action)
+      console.log('after', store.getState().todos.toJS())
+      return sb
+    }
   )
 )
 
