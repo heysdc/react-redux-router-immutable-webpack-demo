@@ -10,7 +10,7 @@ const Click = ({timeoutValue, onClickAdd}) => {
     {timeoutValue}
     <form onSubmit={add}>
       <input ref={(node) => { inputNode = node }} />
-      <button type='sbumit'>添加</button>
+      <button type='sbumit'>异步2秒后添加</button>
     </form>
   </div>
 }

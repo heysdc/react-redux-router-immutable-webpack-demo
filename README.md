@@ -8,6 +8,11 @@
 - 9.19更新，使用immutable, redux-immutable解决深层嵌套state的处理效率问题，同时借助immutable提高了reducer的开发效率
 - 9.20更新，发现如果写法稍微变化一下redux-immutable可有可无，详见[redux说明](https://github.com/heysdc/Articles/blob/master/posts/learnRedux.md)的redux-immutalbe部分，更为契合redux的思路，省去了很多兼容的部分，所以又把redux-immutable库去掉了，MDZZ
 
+##命令
+`npm run dev`: 运行项目，地址http://localhost:8080/view/
+`npm run build`：webpack打包到dist里，打包后可直接打开/dist/view/index.html，查看效果
+`npm run test`：按standard标准检查拼写，建议在sublime里装插件保存时检查
+
 ##过程中学到的东西
 
 ###package.json配置
