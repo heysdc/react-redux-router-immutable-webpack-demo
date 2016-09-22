@@ -1,6 +1,6 @@
 // var webpack = require('webpack')
-var path = require('path')
-// import path from 'path'
+// var path = require('path')
+import path from 'path'
 
 module.exports = {
   entry: './client/index.js',

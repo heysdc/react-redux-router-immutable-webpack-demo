@@ -4,7 +4,7 @@
   "description": "learn front-end engineering",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server webpack.config.babel.js --open --hot --inline --content-base dist/client/",
+    "dev": "webpack-dev-server webpack.config.dev.babel.js --open --hot --inline --content-base dist/client/",
     "build": "webpack --display-modules",
     "test": "standard"
   },
