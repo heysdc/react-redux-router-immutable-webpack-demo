@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=development webpack-dev-server webpack.config.dev.babel.js --open --hot --inline --content-base dist/client/",
-    "build": "NODE_ENV=production webpack --display-modules",
-    "test": "standard"
+    "build": "NODE_ENV=production webpack --config ./webpack.config.dev.babel.js --display-modules",
+    "test": "standard",
+    "server": "NODE_ENV=development babel-node server",
+    "buildServer": "NODE_ENV=production webpack --config ./webpack.config.server.babel.js --display-modules"
   },
   "repository": {
     "type": "git",
@@ -37,6 +39,7 @@
   "dependencies": {
     "babel-preset-stage-0": "^6.5.0",
     "immutable": "^3.8.1",
+    "koa": "^2.0.0-alpha.7",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-immutable-render-mixin": "^0.9.7",

@@ -7,11 +7,14 @@
 - 9.14更新，redux-logger方便跟踪state变化, redux-thunk处理异步
 - 9.19更新，使用immutable, redux-immutable解决深层嵌套state的处理效率问题，同时借助immutable提高了reducer的开发效率
 - 9.20更新，发现如果写法稍微变化一下redux-immutable可有可无，详见[redux说明](https://github.com/heysdc/Articles/blob/master/posts/learnRedux.md)的redux-immutalbe部分，更为契合redux的思路，省去了很多兼容的部分，所以又把redux-immutable库去掉了，MDZZ
+- 9.23更新，引入koa2
 
 ##命令
 - `npm run dev`: 运行项目，地址http://localhost:8080/view/
-- `npm run build`：webpack打包到dist里，打包后可直接打开/dist/view/index.html，查看效果
+- `npm run build`：webpack打包到dist/client/js里，打包后可直接打开/dist/view/index.html，查看效果
 - `npm run test`：按standard标准检查拼写，建议在sublime里装插件保存时检查
+- `npm run server`: 运行服务端，地址http://localhost:3000
+- `npm run buildServer`: 将服务端打包到dist/server里
 
 ##过程中学到的东西
 
@@ -75,6 +78,7 @@
   )
   ```
 7. 将immutable引入redux还是有点小坑的，主要是与各个库的兼容与写法的改变详见上面的redux部分
+8. 之前webpack配置文件无法用es6，在项目中建.babelrc即可，babel默认采用其中配置
 
 ##可扩展点
 [引入新的库要有原则](http://amasad.me/2016/01/03/overcoming-intuition-in-programming/)

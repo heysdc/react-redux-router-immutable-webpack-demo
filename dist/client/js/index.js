@@ -33897,8 +33897,6 @@
 	exports.history = exports.store = undefined;
 
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-	// import initialState from './initialState'
-
 
 	var _reducers = __webpack_require__(268);
 
@@ -33909,6 +33907,10 @@
 	var _reduxThunk = __webpack_require__(270);
 
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+
+	var _initialState = __webpack_require__(269);
+
+	var _initialState2 = _interopRequireDefault(_initialState);
 
 	var _reactRouterRedux = __webpack_require__(271);
 
@@ -33969,9 +33971,7 @@
 	  routing: _reactRouterRedux.routerReducer
 	}));
 
-	var preloadedState = window.__PRELOADED_STATE__;
-
-	var store = (0, _redux.createStore)(rootReducer, preloadedState, _redux.applyMiddleware.apply(undefined, middleWare.concat([function (store) {
+	var store = (0, _redux.createStore)(rootReducer, _initialState2.default, _redux.applyMiddleware.apply(undefined, middleWare.concat([function (store) {
 	  return function (dispatch) {
 	    return function (action) {
 	      console.log('before', store.getState().todos.toJS());
