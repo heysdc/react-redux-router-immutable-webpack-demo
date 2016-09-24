@@ -1,9 +1,12 @@
 import Koa from 'koa'
-const app = new Koa()
+var app = new Koa()
 
-// response
-app.use(ctx => {
-  ctx.body = 'Hello Koa'
+app.use((ctx) => {
+  ctx.body = 'Hello World'
+})
+
+app.on('error', (err, ctx) => {
+  console.log('server error', err, ctx)
 })
 
 app.listen(3000)

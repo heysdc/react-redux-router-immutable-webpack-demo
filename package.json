@@ -4,7 +4,7 @@
   "description": "learn front-end engineering",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development webpack-dev-server webpack.config.dev.babel.js --open --hot --inline --content-base dist/client/",
+    "dev": "NODE_ENV=development webpack-dev-server --config ./webpack.config.dev.babel.js --open --hot --inline --content-base dist/client/",
     "build": "NODE_ENV=production webpack --config ./webpack.config.dev.babel.js --display-modules",
     "test": "standard",
     "server": "NODE_ENV=development babel-node server",

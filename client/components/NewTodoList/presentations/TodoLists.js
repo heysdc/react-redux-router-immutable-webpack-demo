@@ -1,4 +1,5 @@
 import React from 'react'
+import Test from './Test'
 
 const TodoLists = ({todos, onClickAdd}) => {
   const add = (e) => {
@@ -14,8 +15,9 @@ const TodoLists = ({todos, onClickAdd}) => {
     </ul>
     <form onSubmit={add}>
       <input ref={(node) => { inputNode = node }} />
-      <button type='sbumit'>添加</button>
+      <button type='sbumit'>添2加</button>
     </form>
+    <Test />
   </div>
 }
 
