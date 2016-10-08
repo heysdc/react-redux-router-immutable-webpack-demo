@@ -12,6 +12,13 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 }
 
+var a = {
+  a: 'a',
+  b: 'b'
+}
+
+console.log('aa', {...a})
+
 const mapStateToProps = (state, ownProps) => {
   return {
     todos: state.todos.toJS()

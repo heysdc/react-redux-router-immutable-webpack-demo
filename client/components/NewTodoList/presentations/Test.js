@@ -18,7 +18,11 @@ export default class Test extends Component {
   }
 
   componentDidMount () {
-    console.log('sb')
+    var a = function * () {
+      yield 'sb'
+    }
+    var b = a()
+    console.log(b.next())
   }
 
   render () {
