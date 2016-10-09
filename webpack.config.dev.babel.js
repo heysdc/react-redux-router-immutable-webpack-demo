@@ -3,7 +3,7 @@
 import path from 'path'
 
 module.exports = {
-  entry: ['babel-polyfill', './client/index.js'],
+  entry: './client/index.js',
   output: {
     path: path.resolve(__dirname, 'dist/client/js/'),
     filename: 'index.js',
@@ -14,11 +14,7 @@ module.exports = {
       {
         test: /.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['es2015', 'react', 'stage-0'],
-          plugins: ['transform-decorators-legacy']
-        }
+        exclude: /node_modules/
       }
     ]
   },
