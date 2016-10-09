@@ -79,7 +79,7 @@
   ```
 7. 将immutable引入redux还是有点小坑的，主要是与各个库的兼容与写法的改变详见上面的redux部分
 8. 之前webpack配置文件无法用es6，在项目中建.babelrc即可，babel默认采用其中配置
-10. 想用generator以及async以及await需要babel-polyfill，另外还得在webpack配置文件中配一下，[参考](http://stackoverflow.com/questions/33527653/babel-6-regeneratorruntime-is-not-defined-with-async-await)
+10. 想用generator以及async以及await需要babel-polyfill，另外还得在webpack配置文件中配一下，[参考](http://stackoverflow.com/questions/33527653/babel-6-regeneratorruntime-is-not-defined-with-async-await)，后面又发现用[babel-runtime](http://babeljs.io/docs/plugins/transform-runtime/)更好，不会污染全局作用域，性能也好点
 
 ##可扩展点
 [引入新的库要有原则](http://amasad.me/2016/01/03/overcoming-intuition-in-programming/)
