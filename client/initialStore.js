@@ -6,6 +6,15 @@ import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 import { hashHistory } from 'react-router'
 import Immutable from 'immutable'
 
+// // thunk自实现
+// const thunkMiddleware = (store) => (dispatch) => (action) => {
+//   if (typeof action === 'function') {
+//     action(dispatch)
+//   } else {
+//     dispatch(action)
+//   }
+// }
+
 const middleWare = [thunkMiddleware]
 
 if (process.env.NODE_ENV !== 'production') {
